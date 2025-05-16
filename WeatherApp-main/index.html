@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="wa.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="card">
+    <div class="search">
+      <div class="search-wrapper">
+        <input type="text" placeholder="Enter city name" spellcheck="false">
+        <ul class="suggestions"></ul> 
+      </div>
+      <button><img src="icons/search.png" alt="search"></button>
+    </div>
+
+    <div class="error">
+      <p>Invalid city name</p>
+    </div>
+
+    <div class="weather">
+      <img src="icons/rain.png" alt="rain" class="weather-icon">
+      <h1 class="temp">22°c</h1>
+      <h3 class="weather-name">Sunny Day</h3>
+      <h2 class="city">New York</h2>
+      <div class="details">
+        <div class="col">
+          <img src="icons/humidity.png" alt="humidity">
+          <div>
+            <p class="humidity">50%</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="icons/wind.png" alt="wind">
+          <div>
+            <p class="wind">15 km/h</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <canvas id="tempChart" width="400" height="200"></canvas>
+
+      <!-- User Rating -->
+      <div class="rating">
+        <p>Rate this weather:</p>
+        <div class="stars">
+          <span data-star="1">&#9733;</span>
+          <span data-star="2">&#9733;</span>
+          <span data-star="3">&#9733;</span>
+          <span data-star="4">&#9733;</span>
+          <span data-star="5">&#9733;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="wa.js"></script>
+</body>
+</html>
