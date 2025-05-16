@@ -1,0 +1,236 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background: #222;
+}
+.card{
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #c33764,#1d2671);
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-wrapper input {
+  width: 100%;
+}
+
+.suggestions {
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.suggestions li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.search input{
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  width: 175px;
+  border-radius: 30px;
+  margin-right: 16px;
+  font-size: 14px;
+}
+
+.search button{
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.search button img{
+  width: 16px;
+}
+.weather-icon{
+  width: 170px;
+  margin-top: 30px;
+}
+.weather h1{
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2{
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+.weather h3{
+  font-size: 35px;
+  font-weight: 300;
+  margin-top: -10px;
+}
+
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+.col{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.col img{
+  width: 40px;
+  margin-right: 10px;
+
+}
+.humidity, .wind{
+  font-size: 28px;
+  margin-top: -6px;
+}
+.weather{
+  display: none;
+}
+.error{
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+/*otids*/
+.card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #c33764,#1d2671); 
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  transition: background 1s ease;
+}
+
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  animation: morph 10s ease-in-out infinite;
+  border-radius: 35% 65% 60% 40% / 40% 60% 35% 65%;
+  filter: blur(60px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+
+
+/*otids*/
+.card[data-weather="sunny"] {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+}
+.card[data-weather="rainy"] {
+  background: linear-gradient(135deg, #314755, #26a0da);
+}
+.card[data-weather="cloudy"] {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+}
+.card[data-weather="drizzle"] {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+.card[data-weather="mist"] {
+  background: linear-gradient(135deg, #3e5151, #decba4);
+}
+.card[data-weather="snow"] {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+.card[data-weather="default"] {
+  background: linear-gradient(135deg, #636363, #a2ab58);
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 35% 65% 60% 40% / 40% 60% 35% 65%;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 60% 40% 35% 65% / 60% 40% 65% 35%;
+    transform: scale(1.05);
+  }
+}
+
+/* Styling for the Temperature Trend Graph */
+#tempChart {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Rating System Styles */
+.rating {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rating p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: inline-block;
+}
+
+.stars span {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.stars span:hover,
+.stars span.selected {
+  color: gold;
+}
